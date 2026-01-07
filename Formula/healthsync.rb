@@ -13,11 +13,11 @@ class Healthsync < Formula
   on_macos do
     on_arm do
       url "https://github.com/mneves75/ai-health-sync-ios/releases/download/v1.0.0/healthsync-1.0.0-macos-arm64.tar.gz"
-      sha256 "PLACEHOLDER_ARM64_SHA256"
+      sha256 "c0beae47d0e7b6d4d8191abebd1db222b5cf5787ce0e1c712955dcabbaa5dedf"
     end
     on_intel do
       url "https://github.com/mneves75/ai-health-sync-ios/releases/download/v1.0.0/healthsync-1.0.0-macos-x86_64.tar.gz"
-      sha256 "PLACEHOLDER_X86_64_SHA256"
+      sha256 "fdd0b4861199ac2e05d226af598e60d1b3694694f806591e5b206537420fb9f0"
     end
   end
 
