@@ -1,0 +1,90 @@
+name: Bump ffts-grep Formula
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version tag (e.g., v0.10)'
+        required: true
+        type: string
+
+jobs:
+  update-formula:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate and update formula
+        env:
+          INPUT_VERSION: ${{ github.event.inputs.version }}
+        run: |
+          # Validate version format (must be v followed by digits and dots)
+          if ! echo "$INPUT_VERSION" | grep -qE '^v[0-9]+(\.[0-9]+)*$'; then
+            echo "Error: Invalid version format. Expected: v0.10 or v1.0.0"
+            exit 1
+          fi
+
+          # Calculate SHA256
+          SHA256=$(curl -sL "https://github.com/mneves75/ffts-grep/archive/refs/tags/${INPUT_VERSION}.tar.gz" | shasum -a 256 | cut -d' ' -f1)
+
+          if [ -z "$SHA256" ] || [ "$SHA256" = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855" ]; then
+            echo "Error: Failed to download tarball or tarball is empty"
+            exit 1
+          fi
+
+          echo "Updating ffts-grep formula to ${INPUT_VERSION} with SHA256: ${SHA256}"
+
+          # Generate formula using heredoc with variable substitution
+          cat > Formula/ffts-grep.rb << FORMULA_EOF
+          # typed: false
+          # frozen_string_literal: true
+
+          # Copyright 2026 Marcus Neves
+          # SPDX-License-Identifier: Apache-2.0
+
+          class FftsGrep < Formula
+            desc "Fast full-text search file indexer using SQLite FTS5"
+            homepage "https://github.com/mneves75/ffts-grep"
+            url "https://github.com/mneves75/ffts-grep/archive/refs/tags/${INPUT_VERSION}.tar.gz"
+            sha256 "${SHA256}"
+            license "Apache-2.0"
+            head "https://github.com/mneves75/ffts-grep.git", branch: "master"
+
+            livecheck do
+              url :stable
+              strategy :github_latest
+            end
+
+            depends_on "rust" => :build
+
+            def install
+              cd "rust-fts5-indexer" do
+                system "cargo", "install", *std_cargo_args
+              end
+            end
+
+            test do
+              # Test version output
+              assert_match "ffts-grep", shell_output("#{bin}/ffts-grep --version")
+
+              # Test actual search functionality
+              (testpath/"hello.txt").write("Hello World from ffts-grep test!")
+              system bin/"ffts-grep", "init", "--project-dir", testpath
+              output = shell_output("#{bin}/ffts-grep search --project-dir #{testpath} Hello")
+              assert_match "hello.txt", output
+            end
+          end
+          FORMULA_EOF
+
+      - name: Commit and push
+        env:
+          INPUT_VERSION: ${{ github.event.inputs.version }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add Formula/ffts-grep.rb
+          git diff --staged --quiet && echo "No changes to commit" && exit 0
+          git commit -m "Bump ffts-grep to ${INPUT_VERSION}"
+          git push
