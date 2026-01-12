@@ -7,10 +7,10 @@
 class FftsGrep < Formula
   desc "Fast full-text search file indexer using SQLite FTS5"
   homepage "https://github.com/mneves75/ffts-grep"
-  url "https://github.com/mneves75/ffts-grep/archive/refs/tags/v0.9.tar.gz"
-  sha256 "91c78013399400946fa1ab9b206611ff02bc1603659ca4eb0b2978bd0a2161fd"
+  url "https://github.com/mneves75/ffts-grep/archive/refs/tags/v0.9.0.tar.gz"
+  sha256 "dc3de24fea3544fa566ab4fc483a5df5a6c266dc72c1c9371c297f31fce9a6ce"
   license "Apache-2.0"
-  head "https://github.com/mneves75/ffts-grep.git", branch: "master"
+  head "https://github.com/mneves75/ffts-grep.git", branch: "main"
 
   livecheck do
     url :stable
