@@ -7,17 +7,17 @@
 class Healthsync < Formula
   desc "Secure sync of Apple HealthKit data between iPhone and Mac"
   homepage "https://github.com/mneves75/ai-health-sync-ios"
-  version "1.0.1"
+  version "1.0.0"
   license "Apache-2.0"
 
   on_macos do
     on_arm do
-      url "https://github.com/mneves75/ai-health-sync-ios/releases/download/v1.0.1/healthsync-1.0.1-macos-arm64.tar.gz"
-      sha256 "336c6738d034ed8b0b0fedb56881c77f6eee6337b2dbc983639c6623febc8cb7"
+      url "https://github.com/mneves75/ai-health-sync-ios/releases/download/v1.0.0/healthsync-1.0.0-macos-arm64.tar.gz"
+      sha256 "7340a71710cca698cfa090bed3c3314ddae4eea69a496080f0790e2a87f788a6"
     end
     on_intel do
-      url "https://github.com/mneves75/ai-health-sync-ios/releases/download/v1.0.1/healthsync-1.0.1-macos-x86_64.tar.gz"
-      sha256 "07a0a74205b688c95657276f6306fa923c45e598236f7ae8a98f3ea7b251144a"
+      url "https://github.com/mneves75/ai-health-sync-ios/releases/download/v1.0.0/healthsync-1.0.0-macos-x86_64.tar.gz"
+      sha256 "9fff32cf2583942cbd341230d14b6140a787c0358d524714251c7c1c43d3abaa"
     end
   end
 
