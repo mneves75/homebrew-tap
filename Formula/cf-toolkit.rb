@@ -8,12 +8,11 @@ class CfToolkit < Formula
   desc "Multi-account Cloudflare Wrangler with locks against wrong-account deploys"
   homepage "https://github.com/mneves75/cf-toolkit"
   url "https://github.com/mneves75/cf-toolkit/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "901ef27357b63d782ab0a4ffdec9f7ad4ba861b88e18a25408b1fbbe9479f34e"
+  sha256 "9091f4cb763262a5845e7cfc0f0443c305ac978cd215838298c81d4c3ce6a88b"
   license "Apache-2.0"
-  version "1.0.0"
 
-  depends_on "node" # cf-* scripts use node to parse JSONC configs and API responses
   depends_on :macos # tokens live in the macOS login Keychain via the `security` CLI
+  depends_on "node" # cf-* scripts use node to parse JSONC configs and API responses
 
   def install
     bin.install "cf-register-account", "cf-init-project", "cf-guard", "cf-toolkit"
