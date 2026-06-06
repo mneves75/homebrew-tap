@@ -8,7 +8,7 @@ class CfToolkit < Formula
   desc "Multi-account Cloudflare Wrangler with locks against wrong-account deploys"
   homepage "https://github.com/mneves75/cf-toolkit"
   url "https://github.com/mneves75/cf-toolkit/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "9091f4cb763262a5845e7cfc0f0443c305ac978cd215838298c81d4c3ce6a88b"
+  sha256 "3450c473d2fa2dba09d9918dd95b1777cd6cc2b0aa9ba7e7df48b7b3fddbf78d"
   license "Apache-2.0"
 
   depends_on :macos # tokens live in the macOS login Keychain via the `security` CLI
