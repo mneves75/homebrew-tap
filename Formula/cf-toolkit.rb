@@ -8,7 +8,7 @@ class CfToolkit < Formula
   desc "Multi-account Cloudflare Wrangler with locks against wrong-account deploys"
   homepage "https://github.com/mneves75/cf-toolkit"
   url "https://github.com/mneves75/cf-toolkit/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "9fee5fcd863a1a2a01bdea34b286e6d2e86a1d5f13edc29b2aaf18cf1fe44d30"
+  sha256 "fde790b87fcd76a4b0c584c78035efba738ce5f0eac4a91f00e8654eb35d1cee"
   license "Apache-2.0"
   version "1.0.0"
 
