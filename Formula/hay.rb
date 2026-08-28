@@ -9,7 +9,6 @@
 class Hay < Formula
   desc "Ranked grep for coding agents, with the priors ripgrep deliberately lacks"
   homepage "https://github.com/mneves75/hay"
-  version "0.2.0"
   license "MIT"
 
   livecheck do
