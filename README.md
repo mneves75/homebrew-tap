@@ -16,6 +16,19 @@ brew tap mneves75/tap
 | `healthsync` | Secure sync of Apple HealthKit data between iPhone and Mac | Pre-built binary |
 | `ffts-grep` | Fast full-text search file indexer using SQLite FTS5 | From source (Rust) |
 
+## Available Casks
+
+| Cask | Description |
+|------|-------------|
+| `recortia` | Local-first macOS screenshot tool with secure redaction and on-device OCR (beta, Apple Silicon, macOS 15+) |
+
+```bash
+brew install --cask mneves75/tap/recortia
+```
+
+The DMG is Developer ID signed and notarized; its SHA-256 matches the
+[release](https://github.com/mneves75/recortia/releases) checksum and `manifest.txt`.
+
 ## Install Individual Formulas
 
 ### hay
