@@ -7,6 +7,12 @@ cask "recortia" do
   desc "Local-first screenshot tool with secure redaction and on-device OCR"
   homepage "https://github.com/mneves75/recortia"
 
+  livecheck do
+    url :url
+    regex(/^v?(\d+(?:\.\d+)+(?:-beta\d+)?)$/i)
+    strategy :github_latest
+  end
+
   depends_on arch: :arm64
   depends_on macos: :sequoia
 
