@@ -1,6 +1,6 @@
 cask "recortia" do
-  version "0.9.0-beta5"
-  sha256 "9d0c2f541eda0112edeef7c510812f3adadc3769f47d2740cfa209cf5133be10"
+  version "0.10.1"
+  sha256 "3466c6a87e3d1ce39de09f196e440c1dfcbcbfcded5081701555409019cca69c"
 
   url "https://github.com/mneves75/recortia/releases/download/v#{version}/Recortia-#{version}.dmg"
   name "Recortia"
