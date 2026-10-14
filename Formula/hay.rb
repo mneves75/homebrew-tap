@@ -18,23 +18,23 @@ class Hay < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/mneves75/hay/releases/download/v0.3.2/hay-v0.3.2-aarch64-apple-darwin.tar.gz"
-      sha256 "68baa45625b052608ae950777179660c0e527308bd463ce0216251dc01a39d82"
+      url "https://github.com/mneves75/hay/releases/download/v0.4.0/hay-v0.4.0-aarch64-apple-darwin.tar.gz"
+      sha256 "8309b08e3490e48836ffadfa8b8be013077461f83aaf2ac31eb78925f6fe7d5b"
     end
     on_intel do
-      url "https://github.com/mneves75/hay/releases/download/v0.3.2/hay-v0.3.2-x86_64-apple-darwin.tar.gz"
-      sha256 "f83825a4d8c39b0d8abcdfc8220ae590f9afef3d3a7e02e2038710cb665043a9"
+      url "https://github.com/mneves75/hay/releases/download/v0.4.0/hay-v0.4.0-x86_64-apple-darwin.tar.gz"
+      sha256 "22e4e0ad3aa5ee8ed498761877ed0ef638a55d3aecdaf14779a1b41969e97fe1"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/mneves75/hay/releases/download/v0.3.2/hay-v0.3.2-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "2a329c1961c7e641c10b5b1e8f4e76138694e908734d03660e2fc9ac38b54a24"
+      url "https://github.com/mneves75/hay/releases/download/v0.4.0/hay-v0.4.0-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "3652281bf738f2120c90dd55b4a2a217db3f6692c014a73e91429b8c1533ab99"
     end
     on_intel do
-      url "https://github.com/mneves75/hay/releases/download/v0.3.2/hay-v0.3.2-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "349cb2dd93683b28edad96d65f0e46d26e3d0c4892b6b24bcb83b49f72c1d327"
+      url "https://github.com/mneves75/hay/releases/download/v0.4.0/hay-v0.4.0-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "8d96fa0a62334775a14d5e25fce67bbb3350be5b58207dce368364b86ee84e21"
     end
   end
 
