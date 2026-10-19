@@ -20,7 +20,7 @@ brew tap mneves75/tap
 
 | Cask | Description |
 |------|-------------|
-| `recortia` | Local-first macOS screenshot tool with secure redaction and on-device OCR (beta, Apple Silicon, macOS 15+) |
+| `recortia` | Local-first macOS screenshot tool with secure redaction and on-device OCR (Apple Silicon, macOS 15+) |
 
 ```bash
 brew install --cask mneves75/tap/recortia
